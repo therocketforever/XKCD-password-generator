@@ -1,6 +1,6 @@
 module XkcdPassword
 
-  class Factory
+  class Generator
     attr_accessor :dictionary, :template
     def initialize(hash={})
       self.dictionary = {"word"=>XkcdPassword::Dictonary.default}
