@@ -1,5 +1,5 @@
 module XkcdPassword
-  module Dictonary
+  module Dictionary
     def self.default
       File.readlines(dictionary_path("5000-common-words.txt")).map(&:strip)
     end

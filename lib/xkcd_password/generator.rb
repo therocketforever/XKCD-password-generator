@@ -3,7 +3,7 @@ module XkcdPassword
   class Generator
     attr_accessor :dictionary, :template
     def initialize(hash={})
-      self.dictionary = {"word"=>XkcdPassword::Dictonary.default}
+      self.dictionary = {"word"=>XkcdPassword::Dictionary.default}
       self.template = hash[:template] || "word-word-word-word"
     end
 

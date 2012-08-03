@@ -4,7 +4,7 @@ describe XkcdPassword::Generator do
   
   before do
     # Reading in the actual dictionary is slow...
-    XkcdPassword::Dictonary.stub(:default).and_return(%w(correct horse battery stapler))
+    XkcdPassword::Dictionary.stub(:default).and_return(%w(correct horse battery stapler))
   end
 
   context "with default settings" do 
@@ -14,7 +14,7 @@ describe XkcdPassword::Generator do
     end
 
     it "use the default dictionary to populate" do
-      XkcdPassword::Dictonary.should_receive(:default).once.and_return(%w(one two three four))
+      XkcdPassword::Dictionary.should_receive(:default).once.and_return(%w(one two three four))
       xkcd_password_generator = XkcdPassword::Generator.new
     end
 
