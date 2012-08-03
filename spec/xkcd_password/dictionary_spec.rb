@@ -1,7 +1,8 @@
 require File.expand_path("lib/xkcd_password/dictionary")
 describe XkcdPassword::Dictonary do
-  it "reads the system dictionary file" do
-    File.should_receive(:readlines).with("/usr/share/dict/words").and_return(%w(one two three four))
+  it "defaults to reading the common 5000 words dictionary" do
+    File.stub(:readlines).and_return(%w(one two))
+    XkcdPassword::Dictonary.should_receive(:dictionary_path).with("5000-common-words.txt")
     XkcdPassword::Dictonary.default
   end
 end
